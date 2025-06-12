@@ -3,9 +3,9 @@ import {PencilIcon} from "@heroicons/react/24/solid"
 import Subheading from '../../SubComponents/Subheading'
 const DailyProgress = () => {
   return (
-    <div className='w-full h-[500px] bg-white p-4 flex flex-col rounded-xl justify-between shadow-md'>
+    <div className='w-full h-[400px] bg-white p-4 flex flex-col rounded-xl justify-between shadow-md'>
       <Subheading title={"Daily Progress"} icon={<PencilIcon className='h-5 w-5 text-black cursor-pointer'/>}/>
-      <div className='flex gap-3 w-full h-[300px] items-center justify-between'>
+      <div className='flex gap-3 w-full h-[300px] items-center justify-between '>
         <div className='flex flex-col gap-6 w-[100px] h-full items-center justify-center'>
           <span className='text-black text-md'>Yesterday</span>
           <span className='text-black text-xl'>0</span>

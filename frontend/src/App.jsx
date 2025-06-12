@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import FocusTimer from './components/HomePage/FocusTimer'
 import LeftMenubar from './components/HomePage/LeftMenubar'
@@ -8,9 +8,11 @@ import AlarmPage from './components/Alarm/AlarmPage'
 import StopWatchPage from './components/StopWatch/StopWatchPage'
 import WorldClockPage from './components/WorldClock/WorldClockPage'
 import HomePage from './components/HomePage/HomePage'
+import { UserContext } from './contextProviders/UserContext'
 
 function App() {
   const  [item, setItem] = useState("");
+  const {user} = useContext(UserContext);
   const renderDiv = () => {
     switch(item){
       case "Focus Session":
@@ -26,10 +28,10 @@ function App() {
     }
   }
   return (
-    <div className='w-screen h-screen bg-[#F7FAFC] flex items-center justify-center'>
+    <div className='w-screen h-screen bg-[#F7FAFC] flex items-center justify-between'>
       <LeftMenubar setItem = {setItem}/>
-      <div className='w-[calc(100%-300px)] flex flex-col gap-2 h-full p-4'>
-        {renderDiv()}
+      <div className='w-[calc(100%-200px)] flex flex-col gap-2 h-full p-2'>
+        {user && renderDiv()}
       </div>
     </div>
   )

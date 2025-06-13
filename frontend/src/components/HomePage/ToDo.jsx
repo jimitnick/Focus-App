@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Subheading from '../../SubComponents/Subheading'
 import { PlusIcon } from '@heroicons/react/24/solid'
+import { db } from '../../firebase/firebase'
+import { UserContext } from '../../contextProviders/UserContext'
+import { doc, getDoc } from 'firebase/firestore'
+
 const ToDo = ({AddTaskButtonClicked, setAddButtonClicked}) => {
+  const {user} = useContext(UserContext);
   const [Todo, setTodo] = useState([]);
   const [TaskName, setTaskName] = useState("");
   const [TaskDescription, setTaskDescription] = useState("");
@@ -10,6 +15,15 @@ const ToDo = ({AddTaskButtonClicked, setAddButtonClicked}) => {
   // const fetchTodo = async () => {
   //   const response = await fetch("");
   // }
+  useEffect(() => {
+    const getDetails= async () =>{
+      const docRef = doc(db, "cities", "SF");
+      const docSnap = await getDoc(docRef);
+
+      console.log(docSnap.data())
+    }
+    getDetails()
+  },[])
   return (
     <>
       {AddTaskButtonClicked &&

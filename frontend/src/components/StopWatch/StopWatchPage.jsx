@@ -37,13 +37,13 @@ const StopWatchPage = () => {
           <div className='flex gap-4 mt-6'>
             <button
               onClick={handleStartStop}
-              className='px-4 py-2 bg-blue-500 text-white rounded-lg'
+              className='px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer'
             >
               {running ? 'Stop' : 'Start'}
             </button>
             <button
               onClick={handleReset}
-              className='px-4 py-2 bg-gray-400 text-white rounded-lg'
+              className='px-4 py-2 bg-gray-400 text-white rounded-lg cursor-pointer'
             >
               Reset
             </button>

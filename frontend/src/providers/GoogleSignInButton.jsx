@@ -10,8 +10,8 @@ const GoogleSignInButton = () => {
         }
     }, [user]);
   return (
-    <button className='flex gap-3 items-center justify-center bg-white p-7 rounded-2xl w-[400px]' onClick={() => {loginWithGoogle()}}>
-        <img src={GoogleLogo} alt="" className='h-8 w-8'/>
+    <button className='flex gap-3 items-center justify-center bg-[#F2F2F2] cursor-pointer shadow-white shadow-sm p-5 rounded-lg w-[350px] z-1' onClick={() => {loginWithGoogle()}}>
+        <img src={GoogleLogo} alt="" className='h-8 w-8 bg-blend-difference'/>
         <span className='text-black text-xl'>Sign in with Google</span> 
     </button>
   )

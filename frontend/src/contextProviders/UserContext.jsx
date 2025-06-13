@@ -3,8 +3,6 @@ import React, { createContext, useState, useEffect } from 'react';
 
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, provider } from '../firebase/firebase';
-import { Navigate } from 'react-router-dom';
-import Login from '../components/LoginAndLogout/Login';
 
 export const UserContext = createContext();
 
@@ -25,7 +23,6 @@ export const UserProvider = ({ children }) => {
     try {
       await signOut(auth);
       setUser(null);
-      <Navigate to={<Login />}/>
     } catch (error) {
       console.error("Logout Error:", error);
     }
@@ -40,7 +37,7 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, loginWithGoogle, logout }}>
+    <UserContext.Provider value={{ user,setUser, loginWithGoogle, logout }}>
       {children}
     </UserContext.Provider>
   );

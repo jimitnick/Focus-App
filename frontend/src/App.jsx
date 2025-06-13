@@ -11,7 +11,7 @@ import { UserContext } from './contextProviders/UserContext'
 
 function App() {
   const  [item, setItem] = useState("");
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const renderDiv = () => {
     switch(item){
       case "Focus Session":
@@ -28,7 +28,7 @@ function App() {
     <div className='w-screen h-screen bg-[#F7FAFC] flex items-center justify-between'>
       <LeftMenubar setItem = {setItem}/>
       <div className='w-[calc(100%-200px)] flex flex-col gap-2 h-full p-2'>
-        {user && renderDiv()}
+        {renderDiv()}
       </div>
     </div>
   )

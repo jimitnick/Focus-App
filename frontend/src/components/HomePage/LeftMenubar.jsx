@@ -7,19 +7,20 @@ import Stopwatch from "../../images/stopwatch.png"
 import WorldClock from "../../images/worldclock.png"
 import Elements from './Elements'
 import { UserContext } from '../../contextProviders/UserContext'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
+import Login from '../LoginAndLogout/Login'
 
 const LeftMenubar = ({setItem}) => {
-  const { user, logout} = useContext(UserContext);
+  const { user, setUser, logout} = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
     if(!user){
-      navigate("/");
+      navigate("/")
     }
     else{
       navigate("/homepage");
     }
-  })
+  },[user])
   const handleLogout = () => {
     logout();
   }

@@ -9,6 +9,9 @@ const MusicPlayer = () => {
   useEffect(() => {
     axios.get("http://localhost:4000/api/token").then(res => {
       setAccessToken(res.data.access_token);
+    })
+    .catch((error) => {
+      setAccessToken("Error Please try after sometime");
     });
   }, []);
 
@@ -53,7 +56,7 @@ const MusicPlayer = () => {
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
-          className="border p-2 w-full"
+          className="p-2 w-full border-1 border-[#dadada] rounded-lg"
           placeholder="Search for a song"
         />
         <button onClick={searchSongs} className="p-2 bg-green-500 text-white cursor-pointer">

@@ -32,7 +32,6 @@ const LeftMenubar = ({setItem}) => {
       <div className='flex flex-col p-4 gap-4'>
         <Elements size={"h-12 w-12"} image={FocusSession} title={"Focus Session"} setItems = {setItem}/>
         <Elements size={"h-12 w-12"} image={Timer} title={"Timer"} setItems = {setItem}/>
-        <Elements size={"h-9 w-9"} image={Alarm} title={"Alarm"} setItems = {setItem}/>
         <Elements size={"h-10 w-10"} image={Stopwatch} title={"StopWatch"} setItems = {setItem}/>
         <Elements size={"h-8 w-8"} image={WorldClock} title={"World clock"} setItems = {setItem}/>
         <button className='w-full h-[50px] p-4 bg-[#dadada] flex items-center justify-center cursor-pointer hover:bg-[white] rounded-md' onClick={() => {handleLogout()}}>Sign Out</button>

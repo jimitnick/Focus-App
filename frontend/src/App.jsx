@@ -4,7 +4,6 @@ import FocusTimer from './components/HomePage/FocusTimer'
 import LeftMenubar from './components/HomePage/LeftMenubar'
 import ToDo from './components/HomePage/ToDo'
 import TimerPage from './components/Timer/TimerPage'
-import AlarmPage from './components/Alarm/AlarmPage'
 import StopWatchPage from './components/StopWatch/StopWatchPage'
 import WorldClockPage from './components/WorldClock/WorldClockPage'
 import HomePage from './components/HomePage/HomePage'
@@ -19,8 +18,6 @@ function App() {
         return <HomePage />
       case "Timer":
         return <TimerPage />
-      case "Alarm":
-        return <AlarmPage />
       case "StopWatch":
         return <StopWatchPage />
       case "World clock":

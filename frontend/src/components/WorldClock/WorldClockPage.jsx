@@ -1,9 +1,10 @@
 import React from 'react'
+import MapWithTimezone from './MapWithTimezone'
 
 const WorldClockPage = () => {
   return (
-    <div>
-      
+    <div className='w-full h-full'>
+      <MapWithTimezone />
     </div>
   )
 }
